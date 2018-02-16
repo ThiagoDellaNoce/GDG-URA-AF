@@ -1,0 +1,19 @@
+<h1> Cadastro de pessoa</h1>
+
+<!-- Cadastrando -->
+<form #f="ngForm" (submit)='form_submit(f)'>
+  <input type="text" ngModel name="nome" placeholder="Nome">
+
+  <br />
+  <input type="text" ngModel name="sobrenome" placeholder="Sobrenome">
+
+  <br />
+  <button type="submit">Cadastrar</button>
+</form>
+
+<!-- Listando -->
+<ul>
+  <li *ngFor="let p of pessoas | async">
+    {{ p.nome + ' ' + p.sobrenome}}
+  </li>
+</ul>
